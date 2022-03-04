@@ -1,0 +1,14 @@
+# pod.yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: data-dog-api
+  labels:
+    app: dotnet-aks-filebeat
+    component: netcore-app
+spec:
+  containers:
+    - image: dockerdemojhacontainer.azurecr.io/datadogapiwithfilebeat:dev
+      name: webapi
+      ports:
+        - containerPort: 80

@@ -1,0 +1,15 @@
+filebeat.inputs:
+    - type: log
+      enabled: true
+      paths:
+      - C:/Users/P7166231/source/repos/DataDogLog_POC/DataDogLog_POC/bin/*.txt
+
+processors:
+  - add_tags:
+       tags: {Serilog.LogFile.WebApi}
+       target: 'ServiceLogAppName'
+
+
+output.console:
+  pretty: true
+    
